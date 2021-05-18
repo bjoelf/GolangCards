@@ -1,17 +1,18 @@
 package main
 
+import "fmt"
+
 func main() {
+	cards := newDeck()
 
-	cards := deck{"Ace of Diamonds", newCard()}
-	cards = append(cards, "another slice")
+	hand, remainingCards := deal(cards, 5)
 
-	cards.print()
+	hand.print()
+	remainingCards.print()
+
+	greeting := "Hi there"
+	fmt.Println([]byte(greeting))
+
 }
 
-func newCard() string {
-	return "Five of Dimonds"
-}
-
-func timesTwoNumber(number int) int {
-	return number * 2
-}
+//https://golang.org/pkg/io/ioutil/#WriteFile
